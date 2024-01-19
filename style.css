@@ -19,3 +19,9 @@ button {
 p {
     line-height: 2em;
 }
+.centergif {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
