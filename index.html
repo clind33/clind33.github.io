@@ -56,7 +56,29 @@
     document.getElementById('explanation').textContent = data.explanation;
   </script>
     
-    
+    // Initialize p5.js sound
+let osc; // oscillator object
+
+function setup() {
+  createCanvas(400, 400);
+  
+  // Create a sine wave oscillator
+  osc = new p5.Oscillator();
+  osc.setType('sine'); // Set oscillator type to sine wave
+  osc.start(); // Start the oscillator
+}
+
+function draw() {
+  background(220);
+  
+  // Set oscillator frequency based on mouse position
+  let freq = map(mouseX, 0, width, 100, 1000); // Map mouseX to a frequency range
+  osc.freq(freq); // Set oscillator frequency
+  
+  // Set oscillator amplitude based on mouseY position
+  let amp = map(mouseY, 0, height, 1, 0.01); // Map mouseY to an amplitude range
+  osc.amp(amp); // Set oscillator amplitude
+}
 
 </body>
 
